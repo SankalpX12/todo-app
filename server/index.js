@@ -18,6 +18,9 @@ app.use(express.json());
 
 app.use(express.static(path.join(__dirname, '..', 'public')));
 
+// Redirect bare root to login
+app.get('/', (req, res) => res.redirect('/login.html'));
+
 app.use(
   session({
     store: new pgSession({
