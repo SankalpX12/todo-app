@@ -16,6 +16,8 @@ const app = express();
 
 app.use(express.json());
 
+app.set('trust proxy', 1);
+
 app.use(express.static(path.join(__dirname, '..', 'public')));
 
 // Redirect bare root to login
