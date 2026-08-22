@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dashboard — To-Do App</title>
+  <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body class="dashboard-body">
+
+  <header class="dash-header">
+    <span class="dash-logo">To-Do</span>
+    <span id="user-email" class="dash-email"></span>
+    <button id="logout-btn" type="button" class="btn-logout">Log out</button>
+  </header>
+
+  <main class="dash-main">
+
+    <!-- Add task -->
+    <section class="add-task-card">
+      <h2>New task</h2>
+      <form id="add-task-form">
+        <div class="add-task-row">
+          <input type="text" id="task-title" placeholder="What needs to be done?" required>
+          <input type="date" id="task-date" required>
+          <input type="time" id="task-time" required>
+          <button type="submit">Add task</button>
+        </div>
+      </form>
+      <div id="form-error" class="message error" hidden></div>
+    </section>
+
+    <div id="error-banner" class="message error" hidden></div>
+
+    <!-- Overdue (top — most urgent) -->
+    <section id="section-overdue" class="task-section tier-overdue">
+      <h2 class="section-header"><span class="tier-dot"></span>Overdue</h2>
+      <ul id="list-overdue" class="task-list"></ul>
+    </section>
+
+    <!-- High -->
+    <section id="section-high" class="task-section tier-high">
+      <h2 class="section-header"><span class="tier-dot"></span>High Priority <span class="tier-hint">&lt; 24 h</span></h2>
+      <ul id="list-high" class="task-list"></ul>
+    </section>
+
+    <!-- Medium -->
+    <section id="section-medium" class="task-section tier-medium">
+      <h2 class="section-header"><span class="tier-dot"></span>Medium Priority <span class="tier-hint">1 – 3 days</span></h2>
+      <ul id="list-medium" class="task-list"></ul>
+    </section>
+
+    <!-- Low -->
+    <section id="section-low" class="task-section tier-low">
+      <h2 class="section-header"><span class="tier-dot"></span>Low Priority <span class="tier-hint">&gt; 3 days</span></h2>
+      <ul id="list-low" class="task-list"></ul>
+    </section>
+
+    <!-- Completed today -->
+    <section id="section-completed" class="task-section tier-completed">
+      <h2 class="section-header"><span class="tier-dot"></span>Completed Today</h2>
+      <ul id="list-completed" class="task-list"></ul>
+    </section>
+
+  </main>
+
+  <script src="/js/dashboard.js"></script>
+</body>
+</html>

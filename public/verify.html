@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Verify Email — To-Do App</title>
+  <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body>
+  <main class="auth-card">
+    <h1>Email verification</h1>
+    <div id="status-message" class="message">Verifying…</div>
+
+    <div id="resend-section" hidden>
+      <p class="auth-link" style="margin-top:1rem;">Enter your email for a new verification link:</p>
+      <form id="resend-form">
+        <label for="resend-email">Email</label>
+        <input type="email" id="resend-email" required autocomplete="email">
+        <button type="submit">Resend verification email</button>
+      </form>
+    </div>
+
+    <p class="auth-link" id="login-link" hidden><a href="/login.html">← Back to login</a></p>
+  </main>
+  <script src="/js/verify.js"></script>
+</body>
+</html>

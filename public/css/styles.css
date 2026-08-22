@@ -1,0 +1,254 @@
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  font-family: system-ui, -apple-system, sans-serif;
+  background: #f3f4f6;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+}
+
+/* ── Auth pages ── */
+.auth-card {
+  background: #fff;
+  padding: 2rem;
+  border-radius: 10px;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+  width: 100%;
+  max-width: 420px;
+}
+
+.auth-card h1 { font-size: 1.5rem; margin-bottom: 1.5rem; }
+
+label {
+  display: block;
+  font-size: 0.875rem;
+  font-weight: 500;
+  margin-bottom: 0.3rem;
+  color: #374151;
+}
+
+.hint { font-weight: 400; color: #9ca3af; }
+
+input[type="email"],
+input[type="password"],
+input[type="text"],
+input[type="datetime-local"] {
+  display: block;
+  width: 100%;
+  padding: 0.55rem 0.75rem;
+  border: 1px solid #d1d5db;
+  border-radius: 6px;
+  font-size: 1rem;
+  margin-bottom: 1rem;
+  transition: border-color 0.15s;
+}
+
+input:focus { outline: none; border-color: #2563eb; box-shadow: 0 0 0 3px rgba(37,99,235,0.15); }
+
+button {
+  display: block;
+  width: 100%;
+  padding: 0.6rem 1rem;
+  background: #2563eb;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  font-size: 1rem;
+  cursor: pointer;
+  margin-top: 0.5rem;
+  transition: background 0.15s;
+}
+
+button:hover:not(:disabled) { background: #1d4ed8; }
+button:disabled { opacity: 0.55; cursor: not-allowed; }
+
+.btn-secondary {
+  background: #f3f4f6;
+  color: #374151;
+  border: 1px solid #d1d5db;
+  margin-top: 0.75rem;
+}
+.btn-secondary:hover:not(:disabled) { background: #e5e7eb; }
+
+.message {
+  padding: 0.75rem 1rem;
+  border-radius: 6px;
+  font-size: 0.875rem;
+  margin-top: 1rem;
+}
+.message.success { background: #d1fae5; color: #065f46; }
+.message.error   { background: #fee2e2; color: #991b1b; }
+
+.auth-link { margin-top: 1.25rem; font-size: 0.875rem; text-align: center; color: #6b7280; }
+.auth-link a { color: #2563eb; text-decoration: none; }
+.auth-link a:hover { text-decoration: underline; }
+
+/* ── Dashboard — filled in Phase 7 ── */
+
+/* ── Dashboard layout ────────────────────────────────────────────────────── */
+.dashboard-body {
+  display: block;
+  background: #f3f4f6;
+  padding: 0;
+}
+
+.dash-header {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 0.75rem 1.5rem;
+  background: #fff;
+  border-bottom: 1px solid #e5e7eb;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+.dash-logo { font-weight: 700; font-size: 1.1rem; color: #111; }
+.dash-email { font-size: 0.85rem; color: #6b7280; flex: 1; }
+
+.btn-logout {
+  width: auto;
+  padding: 0.35rem 0.9rem;
+  font-size: 0.875rem;
+  background: #f3f4f6;
+  color: #374151;
+  border: 1px solid #d1d5db;
+  margin: 0;
+}
+.btn-logout:hover:not(:disabled) { background: #e5e7eb; }
+
+.dash-main {
+  max-width: 640px;
+  margin: 0 auto;
+  padding: 1.5rem 1rem 3rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+/* ── Add-task card ───────────────────────────────────────────────────────── */
+.add-task-card {
+  background: #fff;
+  border-radius: 10px;
+  padding: 1.25rem;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.07);
+}
+
+.add-task-card h2 { font-size: 1rem; margin-bottom: 0.75rem; color: #374151; }
+
+.add-task-row {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.add-task-row input[type="text"] {
+  flex: 1 1 200px;
+  margin-bottom: 0;
+}
+
+.add-task-row input[type="date"] {
+  flex: 0 1 145px;
+  margin-bottom: 0;
+}
+
+.add-task-row input[type="time"] {
+  flex: 0 1 100px;
+  margin-bottom: 0;
+}
+
+.add-task-row button {
+  flex: 0 0 auto;
+  width: auto;
+  padding: 0.55rem 1.1rem;
+  margin-top: 0;
+  white-space: nowrap;
+}
+
+/* ── Task sections ───────────────────────────────────────────────────────── */
+.task-section {
+  background: #fff;
+  border-radius: 10px;
+  padding: 1rem 1.25rem;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.07);
+  border-left: 4px solid transparent;
+}
+
+.tier-overdue  { border-left-color: #9ca3af; }
+.tier-high     { border-left-color: #ef4444; }
+.tier-medium   { border-left-color: #f59e0b; }
+.tier-low      { border-left-color: #22c55e; }
+.tier-completed{ border-left-color: #d1d5db; }
+
+.section-header {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #374151;
+  margin-bottom: 0.75rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.tier-dot {
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.tier-overdue  .tier-dot { background: #9ca3af; }
+.tier-high     .tier-dot { background: #ef4444; }
+.tier-medium   .tier-dot { background: #f59e0b; }
+.tier-low      .tier-dot { background: #22c55e; }
+.tier-completed .tier-dot{ background: #d1d5db; }
+
+.tier-hint {
+  font-size: 0.75rem;
+  font-weight: 400;
+  color: #9ca3af;
+  margin-left: 0.25rem;
+}
+
+/* ── Task list items ─────────────────────────────────────────────────────── */
+.task-list { list-style: none; display: flex; flex-direction: column; gap: 0.5rem; }
+
+.task-empty { font-size: 0.875rem; color: #9ca3af; padding: 0.25rem 0; }
+
+.task-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.65rem;
+}
+
+.task-item input[type="checkbox"] {
+  width: 1rem;
+  height: 1rem;
+  margin-top: 0.2rem;
+  cursor: pointer;
+  flex-shrink: 0;
+  accent-color: #2563eb;
+}
+
+.task-item input[type="checkbox"]:disabled { cursor: default; }
+
+.task-item label {
+  display: flex;
+  flex-direction: column;
+  gap: 0.15rem;
+  cursor: pointer;
+  margin-bottom: 0;
+  font-weight: 400;
+  color: #111;
+}
+
+.task-item.completed label { color: #9ca3af; }
+.task-item.completed .task-title { text-decoration: line-through; }
+
+.task-title   { font-size: 0.95rem; }
+.task-deadline{ font-size: 0.75rem; color: #6b7280; }
