@@ -38,6 +38,7 @@ async function signup(req, res) {
     try {
       await sendVerificationEmail(email.toLowerCase(), token);
     } catch (emailErr) {
+      console.error('Email send failed:', emailErr.message)
       // Fall back to console in development so auth can be tested without Gmail
       if (process.env.NODE_ENV !== 'production') {
         console.log(`[DEV] Verify URL: ${process.env.BASE_URL}/verify.html?token=${token}`);
